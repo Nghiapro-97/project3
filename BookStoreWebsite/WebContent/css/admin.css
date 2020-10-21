@@ -1,0 +1,577 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+*:focus {
+  outline: 0 !important;
+}
+html, body {
+  height: 100%;
+  background: #fff;
+  width: 100%;
+}
+
+.wrapper .header {
+  z-index: 1;
+  background: #22242a;
+  color: white;
+  position: fixed;
+  width: calc(100% - 0%);
+  height: 70px;
+  display: flex;
+  top: 0;
+}
+
+.wrapper .header .header-menu {
+  width: calc(100% - 0%);
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn{
+  padding: 6px 10px;
+  width: 120px;
+  height: 40px;
+  font-size: larger;
+  border: none;
+  margin: 20px 0;
+  border-radius: 2px;
+  border: 1px solid gray;
+  opacity: 0.9;
+}
+.btn-green{
+  background-color: green;
+  color: white;
+}
+.btn-white{
+  background-color: white;
+  color: green;
+}
+.btn-green:hover{
+  border: 1px solid white;
+  opacity: 1;
+}
+.btn-white:hover{
+  border: 1px solid green;
+  opacity: 1;
+}
+.wrapper .header .header-menu .title {
+  color: #fff;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.wrapper .header .header-menu .title span {
+  color: #4ccee8;
+}
+
+.wrapper .header .header-menu .sidebar-btn {
+  color: #fff;
+  position: absolute;
+  height: 40px;
+  float: left;
+  margin: 10px 7px 10px 15px;
+  padding: 4px 8px 5px 8px;
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.3s;
+  transition-property: color;
+}
+.wrapper .header .header-menu .sidebar-btn:hover {
+  border: 1px solid white;
+}
+
+.wrapper .sidebar {
+  z-index: 1;
+  background: #2f323a;
+  position: fixed;
+  top: 70px;
+  width: 250px;
+  height: calc(100% - 9%);
+  transition: 0.3s;
+  transition-property: width;
+  overflow-y: auto;
+}
+
+.wrapper .sidebar .sidebar-menu {
+  overflow: hidden;
+}
+
+.wrapper .sidebar .sidebar-menu .profile {
+  text-align: center;
+}
+
+.wrapper .sidebar .sidebar-menu .profile img {
+  margin: 20px 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.wrapper .sidebar .sidebar-menu .profile p {
+  color: #bbb;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.wrapper .sidebar .sidebar-menu .item {
+  width: 250px;
+  overflow: hidden;
+}
+
+.wrapper .sidebar .sidebar-menu .item .menu-btn{
+  display: block;
+  color: #fff;
+  position: relative;
+  padding: 25px 20px;
+  transition: 0.3s;
+  transition-property: color;
+}
+
+.wrapper .sidebar .sidebar-menu .item .menu-btn:hover {
+  color: #3498db;
+}
+
+.wrapper .sidebar .sidebar-menu .item .menu-btn i {
+  margin-right: 20px;
+}
+
+.wrapper .sidebar .sidebar-menu .item .menu-btn .drop-down {
+  float: right;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.wrapper .sidebar .sidebar-menu .item .sub-menu {
+  background: #3498db;
+  overflow: hidden;
+  max-height: 0;
+  transition: 0.3s;
+}
+
+.wrapper .sidebar .sidebar-menu .item .sub-menu a {
+  display: block;
+  position: relative;
+  color: #fff;
+  white-space: nowrap;
+  font-size: 15px;
+  padding: 20px;
+  transition: 0.3s;
+ 
+}
+
+.wrapper .sidebar .sidebar-menu .item .sub-menu a:hover {
+  background: #55b1f0;
+}
+
+.wrapper .sidebar .sidebar-menu .item .sub-menu a:not(last-child) {
+  border-bottom: 1px solid #8fc5e9;
+}
+
+.wrapper .sidebar .sidebar-menu .item .sub-menu i {
+  padding-right: 20px;
+  font-size: 10px;
+}
+
+.wrapper .sidebar .sidebar-menu .item:target .sub-menu {
+  max-height: 500px;
+}
+
+.wrapper .main-container {
+  width: (100% - 250px);
+  margin-left: 250px;
+  background: url() no-repeat;
+  background-size: cover;
+  margin-top: 70px;
+  padding: 5px;
+  height: auto;
+  transition: 0.3s;
+}
+
+.wrapper.collapse .main-container {
+  width: calc(100% - 70px);
+  margin-left: 70px;
+}
+
+.wrapper .main-container1{
+  width: 100%;
+  margin-top: 70px;
+  padding: 5px;
+  height: auto;
+  transition: 0.3s;
+}
+.wrapper.collapse .sidebar {
+  width: 70px;
+}
+
+.img{
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper.collapse .sidebar .profile img,
+.wrapper.collapse .sidebar .profile p,
+.wrapper.collapse .sidebar a span {
+  display: none;
+}
+
+.wrapper.collapse .sidebar .sidebar-menu .item .menu-btn {
+  font-size: 23px;
+}
+
+.wrapper.collapse .sidebar .sidebar-menu .item .sub-menu i {
+  font-size: 18px;
+  padding-left: 3px;
+}
+
+.page-wrapper a{
+  color: #3498db;
+}
+.page-wrapper a:visited{
+  color: #0066c0;
+}
+.page-wrapper a:hover{
+  color: #ec8c3d;
+}
+
+/*----start manage list----*/
+.main-container .wrapper1{
+  width: 100%;
+  height: auto;
+  padding: 10px 100px;
+}
+.func-group{
+  display: flex;
+  border-bottom: 1px solid gray;
+  height: auto;
+  justify-content: center;
+}
+.func-group button{
+  width: 120px;
+  padding: 10px 10px;
+  border-radius: 3px;
+  background-color: royalblue;
+  color: white;
+  border: none;
+  margin: 5px 10px;
+  font-size: 15px;
+}
+.func-group button:hover{
+  background: radial-gradient(#0a36af,#153ec7)
+}
+.main-container h3{
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  text-transform: uppercase;
+}
+.main-container .page-wrapper{
+  width: 100%;
+  height: auto;
+}
+.main-container .page-wrapper .tablelist{
+  width: 100%;
+  padding: 20px 100px;
+  text-align: left;
+}
+.page-wrapper .tablelist th{
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 90%;
+  border-bottom: 2px solid #111111;
+	border-top: 1px solid #999;
+  background-color: #cfcfcf;
+}
+.page-wrapper .tablelist th, .page-wrapper .tablelist td{
+	padding: 7px 10px 10px 10px;
+}
+.page-wrapper .tablelist tr:nth-child(even) {
+	background-color: #f5f3f3;
+}
+.page-wrapper .tablelist tr:hover {
+	background-color: #cfcfcf;
+}
+.tablelist .action-group{
+  display: flex;
+  justify-content: space-between;
+}
+.tablelist .action-group .edit-btn{
+  padding-right: 10px;
+}
+.tablelist .img-book{
+  width: 75px;
+  height: 100px;
+}
+.tablelist .img-book img{
+  border: 1px solid #eeeeee;
+  box-shadow: 1rem 1rem 1rem -1rem gray;
+}
+/*----end manage list----*/
+/*---Start login page----*/
+.form-login, .form-signup{
+  width: 30%;
+}
+.form-page{
+  margin: auto;
+  margin-top: 20px;
+  height: auto;
+}
+.fieldset{
+  border: 1px solid rgb(212, 211, 211);
+  background-color: #f2f2f2;
+  margin: 20px 0 20px 0;
+  padding: 15px;
+}
+.legend{
+  text-align: center;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+.legend img{
+  border-radius: 50%;
+}
+.form-login .container {
+  position: relative;
+  border-radius: 5px;
+} 
+.form-login .container table{
+  width: 100%;
+  border-spacing: 1em;
+  padding: 0 20px;
+}
+.form-login .container table th{
+  border-bottom: 1px solid rgb(218, 214, 214);
+  padding-bottom: 5px;
+}
+.table-formlogin .btn, .table-formlogin .input{
+  width: 100%;
+  border: 1px solid rgb(218, 214, 214);
+  padding: 12px;
+  font-size: larger;
+  border-radius: 5px;
+}
+.input:hover,
+.table-formlogin .btn:hover {
+  opacity: 2;
+  box-shadow: 3px 3px #d6d6d6;
+}
+.fb{
+  background-color: #3B5998;
+  color: white;
+}
+.google{
+  background-color: #dd4b39;
+  color: white;
+}
+.input[type=submit] {
+  background-color: #0a8f0e;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+.input[type=submit]:hover {
+  background-color: green;
+}
+@media screen and (max-width: 650px) {
+
+}
+/*---End login page----*/
+/*---start index page----*/
+.page-wrapper .statis{
+  display: flex;
+  margin: auto;
+  width: 81%;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+/*---End index page----*/
+/*---Start user form page----*/
+.page-wrapper .table-form{
+  margin: 30px auto;
+  width: 60%;
+}
+.page-wrapper .table-form table{
+  width: 100%;
+  padding: 10px;
+  border-spacing: 0.3em;
+}
+.table-form input, .table-form select{
+  width: 100%;
+  padding: 9px 5px;
+  font-size: larger;
+  border: 1px solid rgb(218, 214, 214);
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.btn-group{
+  display: flex;
+  justify-content: space-around;
+}
+.table-form span{
+  font-weight: 530;
+}
+/*---End user form page----*/
+/*---Start Customer form page----*/
+input.invalid {
+  background-color: #ffdddd;
+}
+.tab {
+  display: none;
+}
+.circles{
+  display: flex;
+  justify-content: center;
+}
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 10px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+.step.active {
+  opacity: 1;
+}
+.step.finish {
+  background-color: #4CAF50;
+}
+/*---End Customer form page----*/
+/*---Start Review form page----*/
+.order-info{
+  display: flex;
+  margin: auto;
+  width: 95%;
+}
+/*---End Review form page----*/
+/*---Start order form page----*/
+.order-info h3{
+  margin: 20px 0;
+  text-align: center;
+}
+.wrapper2{
+  width: 100%;
+  height: auto;
+  padding: 10px 70px;
+}
+.table-orderbook{
+  height: auto;
+  width: 95%;
+  padding: 0px;
+  background-color: white;
+  margin: 20px auto 20px auto;
+  border: 1px solid rgb(236, 234, 234);
+}
+.table-orderbook table, .table-paybook table{
+  width: 100%;
+  text-align: left;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+.table-orderbook .col{
+  vertical-align: super;
+}
+.border-bot{
+  border-bottom: 1px solid rgb(207, 207, 207);
+}
+.center{
+	text-align: center;
+}
+.message, .error{
+	color: red;
+}
+.table-orderbook table th, .table-orderbook .total{
+  color: white;
+  background-color: rgb(180, 180, 180);
+  text-transform: uppercase;
+}
+.table-orderbook table th,
+.table-orderbook table td{
+  padding: 10px;
+}
+.table-orderbook .thumbnail-title{
+  padding-left: 10px;
+  width: 70%;
+}
+.table-orderbook .thumbnail-book{
+  width: 30%;
+  height: 100%;
+  border: none;
+}
+.order-info fieldset legend{
+  text-align: center;
+  border-radius: none;
+  font-size: larger;
+  font-weight: bold;
+  padding: 5px;
+}
+.order-info label{
+  padding-bottom: 10px;
+}
+.order-info table{
+  border-spacing: 0.1em;
+}
+* input,* select{
+  color: gray;
+}
+.table-payInfo fieldset{
+  margin-right: 10px;
+}
+/*---End order form page----*/
+/*---Start order detail page----*/
+.table-order-overview fieldset{
+  margin: auto;
+  width: 95%;
+}
+.order-overview{
+  display: flex;
+}
+.order-overview .table2{
+  width: 100%;
+  padding: 50px;
+  background-color: white;
+  margin: 20px;
+}
+.order-overview .table2 table{
+  width: 100%;
+  border-spacing: 0;
+  text-align: left;
+  font-size: larger;
+}
+.table2 table td{
+  padding: 10px 0;
+}
+.table2 label{
+  font-weight: bold;
+}
+/*---End order detail page----*/
+/*---Start Add book order form page----*/
+.wrapper3{
+  margin: 0 auto;
+  width: 60%;
+  height: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper3 fieldset table{
+  padding: 20px;
+}
+.wrapper3 fieldset{
+  margin: 20px auto;
+  width: 100%;
+}
+/*---End Add book order form page----*/

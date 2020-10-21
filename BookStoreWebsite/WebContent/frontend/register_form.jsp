@@ -1,0 +1,163 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Register as a customer</title>
+	<link rel="stylesheet" href="css/index.css">	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <style type="text/css">
+    	.form-outer input.invalid {
+		  background-color: #ffdddd;
+		}
+		.form-outer input.finish {
+		  background-color: white;
+		}
+    </style>
+</head>
+<body>
+	<div class="wrapper">
+		<jsp:include page="header.jsp"></jsp:include>
+		
+		<!--main container start-->
+		<div class="main-container">
+		    <div class="form-page form-signup">
+		        <fieldset>
+		            <legend>
+		                <img class="img"
+		                    src="https://brd0lg.sn.files.1drv.com/y4mnTuQXFBf7bTW6SLIipTu1OxYQQ9p11CiWpFfDlvzws44lHN-3mIex0Rmidjk_pQc-cmcE3OtSuYvFHc1nEfjOyuZmzw0EiLGWCjRszr1pUZBLX7mp3UB7CC1l2gGGp56dKDKPBdrNSHJX-G--gyjsriIwP5Jd8_eOQvrvUDzDTgXtxi8ugk9SfglXYCZkOTUXOO2cb3XmGdsF8c1n1DchQ?width=105&height=101&cropmode=none"
+		                    alt="">
+		            </legend>
+		            <div class="container">
+		                <div class="progress-bar">
+		                    <div class="step">
+		                        <p>Step 1</p>
+		                        <div class="bullet">
+		                            <span>1</span>
+		                        </div>
+		                        <div class="check fas fa-check"></div>
+		                    </div>
+		                    <div class="step">
+		                        <p>Step 2</p>
+		                        <div class="bullet">
+		                            <span>2</span>
+		                        </div>
+		                        <div class="check fas fa-check"></div>
+		                    </div>
+		                    <div class="step">
+		                        <p>Step 3</p>
+		                        <div class="bullet">
+		                            <span>3</span>
+		                        </div>
+		                        <div class="check fas fa-check"></div>
+		                    </div>
+		                    <div class="step">
+		                        <p>Step 4</p>
+		                        <div class="bullet">
+		                            <span>4</span>
+		                        </div>
+		                        <div class="check fas fa-check"></div>
+		                    </div>
+		                </div>
+		                <div class="form-outer">
+		                    <form action="register_customer" method="post" id="customerForm">
+		                        <div class="page slide-page">
+		                            <div class="center title1">
+		                                <h2>Sign up</h2>
+		                            </div>
+		                            <div class="title">Basic Info:</div>
+		                            <div class="field">
+		                                <div class="label">First Name</div>
+		                                <input type="text" name="firstName" id="firstName" value="${customer.firstname}" placeholder="First name"/>
+		                            </div>
+		                            <div class="field">
+		                                <div class="label">Last Name</div>
+		                                <input type="text" name="lastName" id="lastName" value="${customer.lastname}" placeholder="Last name"/>
+		                            </div>
+		                            <div class="field btns"><button type="button" class="firstNext next">Next</button>
+		                            </div>
+		                        </div>
+		                        <div class="page">
+		                            <div class="title">Contact Info:</div>
+		                            <div class="field">
+		                                <div class="label">Phone Number</div>
+		                                <input type="number" name="phone" id="phone" value="${customer.phone}" placeholder="phone number">
+		                            </div>
+		                            <div class="field">
+		                                <div class="label">Address Line 1</div>
+		                                <input type="text" name="address1" id="address1" value="${customer.addressLine1}" placeholder="Address line 1">
+		                            </div>
+		                            <div class="field">
+		                                <div class="label">Address Line 2</div>
+		                                <input type="text" name="address2" id="address2" value="${customer.addressLine2}" placeholder="Address line 2">
+		                            </div>
+		                            <div class="field btns">
+		                                <button type="button" class="prev-1 prev">Previous</button>
+		                                <button type="button" class="next-1 next">Next</button>
+		                            </div>
+		                        </div>
+		                        <div class="page">
+		                            <div class="title">Contact Info:</div>
+		                            <div class="field">
+		                                <div class="label">City</div>
+		                                <input type="text" name="city" id="city" value="${customer.city}" placeholder="City">
+		                            </div>
+		                            <div class="field">
+		                                <div class="label">State</div>
+		                                <input type="text" name="state" id="state" value="${customer.state}" placeholder="State">
+		                            </div>
+		                            <div class="field">
+		                                <div class="label">Zip Code</div>
+		                                <input type="number" name="zipcode" id="zipcode" value="${customer.zipcode}" placeholder="Zip code">
+		                            </div>
+		                            <div class="field">
+		                                <div class="label">Country</div>
+		                                <select name="country" id="country">
+		                                    <c:forEach items="${mapCountries}" var="country">
+		                                        <option value="${country.value}" <c:if test='${customer.country eq country.value}'>
+		                                            selected='selected'</c:if>>${country.key}</option>
+		                                    </c:forEach>
+		                                </select>
+		                            </div>
+		                            <div class="field btns">
+		                                <button type="button" class="prev-2 prev">Previous</button>
+		                                <button type="button" class="next-2 next">Next</button>
+		                            </div>
+		                        </div>
+		                        <div class="page">
+		                            <div class="title">Login Details:</div>
+		                            <div class="field">
+		                                <div class="label">Email</div>
+		                                <input type="email" name="email" id="email" value="${customer.email}" placeholder="Email">
+		                            </div>
+		                            <div class="field">
+		                                <div class="label">Password</div>
+		                                <input type="password" name="password" id="password" value="${customer.password}" placeholder="Password">
+		                            </div>
+		                            <div class="field">
+		                                <div class="label">Confirm Password</div>
+		                                <input type="password" name="confirmPassword" id="confirmPassword" value="${customer.password}" placeholder="Confirm Password">
+		                            </div>
+		                            <div class="field btns">
+		                                <button type="button" class="prev-3 prev">Previous</button>
+		                                <button class="submit" type="button" >Submit</button>
+		                            </div>
+		                            </div>
+		                    </form>
+		                </div>
+		            </div>
+		        </fieldset>
+		    </div>
+		</div>
+		<!--main container end-->
+   
+		<jsp:include page="footer.jsp"></jsp:include>
+	</div>
+	<script src="js/register.js"></script>
+
+</body>
+</html>
